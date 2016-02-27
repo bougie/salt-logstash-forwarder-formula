@@ -1,0 +1,2 @@
+logstash-forwarder:
+    logstash_server: logger.domain.tld:5043

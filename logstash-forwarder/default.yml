@@ -1,0 +1,10 @@
+{% load_yaml as lookup %}
+FreeBSD:
+    package: logstash-forwarder
+    service: logstash-forwarder
+    config_file: /usr/local/etc/logstash-forwarder.conf
+{% endload %}
+
+{% load_yaml as rawmap %}
+logstash_server: 127.0.0.1:5043
+{% endload %}
