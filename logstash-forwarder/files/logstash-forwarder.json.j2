@@ -4,7 +4,7 @@
 		# A list of downstream servers listening for our messages.
 		# logstash-forwarder will pick one at random and only switch if
 		# the selected one appears to be dead or unresponsive
-		"servers": [ "{{config.logstash_server}}" ],
+		"servers": [ "{{config.hosts}}" ],
 
 		# Network timeout in seconds. This is most important for
 		# logstash-forwarder determining whether to stop waiting for an

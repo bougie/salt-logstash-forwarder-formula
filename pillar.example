@@ -1,2 +1,2 @@
 logstash-forwarder:
-    logstash_server: logger.domain.tld:5043
+    hosts: localhost:5043
