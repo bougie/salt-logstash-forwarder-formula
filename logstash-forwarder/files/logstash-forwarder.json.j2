@@ -6,6 +6,8 @@
 		# the selected one appears to be dead or unresponsive
 		"servers": [ "{{config.hosts}}" ],
 
+		"ssl ca": "{{config.ca_file}}",
+
 		# Network timeout in seconds. This is most important for
 		# logstash-forwarder determining whether to stop waiting for an
 		# acknowledgement from the downstream server. If an timeout is reached,

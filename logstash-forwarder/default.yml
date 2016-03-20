@@ -7,4 +7,5 @@ FreeBSD:
 
 {% load_yaml as rawmap %}
 logstash_server: 127.0.0.1:5043
+ca_file: "./logstash-forwarder.crt"
 {% endload %}
