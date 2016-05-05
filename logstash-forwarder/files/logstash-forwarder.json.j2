@@ -23,7 +23,11 @@
 		{
 			"paths": [
 				"/var/log/messages",
-				"/var/log/*.log"
+				"/var/log/*.log",
+				{%- if salt['grains.get']('os') == 'FreeBSD' %}
+				"/var/log/maillog",
+				"/var/log/cron"
+				{% endif %}
 			],
 
 			# A dictionary of fields to annotate on each event.
