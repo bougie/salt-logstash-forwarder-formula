@@ -23,15 +23,35 @@
 		{
 			"paths": [
 				"/var/log/messages",
-				"/var/log/*.log",
+				"/var/log/debug"
+				{%- if salt['grains.get']('os') == 'Debian' %}
+				, "/var/log/syslog"
+				{% endif %}
 				{%- if salt['grains.get']('os') == 'FreeBSD' %}
-				"/var/log/maillog",
-				"/var/log/cron"
+				, "/var/log/cron"
 				{% endif %}
 			],
 
 			# A dictionary of fields to annotate on each event.
 			"fields": { "type": "syslog" }
+		},
+		{
+			"paths": [
+				"/var/log/*.log"
+			],
+
+			# A dictionary of fields to annotate on each event.
+			"fields": { "type": "log" }
 		}
+		{%- if salt['grains.get']('os') == 'FreeBSD' %},
+		{
+			"paths": [
+				"/var/log/maillog"
+			],
+
+			# A dictionary of fields to annotate on each event.
+			"fields": { "type": "maillog" }
+		}
+		{% endif %}
 	]
 }
