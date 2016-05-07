@@ -5,3 +5,4 @@
 logstash-forwarder_service:
     service.running:
        - name: {{lookup.service}}
+       - enable: True
